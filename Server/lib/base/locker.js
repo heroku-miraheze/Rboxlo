@@ -8,6 +8,9 @@ if (global.rboxlo.env.ENCRYPTION_KEY.length != 32) {
     // Will result in buffer exceptions if not EXACTLY thirty-two characters
     throw `Invalid env.ENCRYPTION_KEY length (expected 32, got ${global.rboxlo.env.ENCRYPTION_KEY.length})`
 }
+if (global.rboxlo.env.CIPHERSWEET_KEY.length != 64) {
+    throw `Invalid env.CIPHERSWEET_KEY length (expected 64, got ${global.rboxlo.env.CIPHERSWEET_KEY.length})`
+}
 
 // Set up ciphersweet
 var provider = new StringProvider(global.rboxlo.env.CIPHERSWEET_KEY)
