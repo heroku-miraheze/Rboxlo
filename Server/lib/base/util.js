@@ -143,7 +143,7 @@ exports.snakeCaseToCamelCaseArrayNested = (array) => {
  * The result of this should then be passed through a URL helper. This method should NOT be used on its own
  * 
  * @param {string} name File name of resource
- * @param {boolean} getResourceFolder Whether to get the specific folder of the resource (default: TRUE)
+ * @param {boolean} [getResourceFolder=true] Whether to get the specific folder of the resource
  * 
  * @returns {string} Formatted path to resource (pass this through your URL helper)
  */

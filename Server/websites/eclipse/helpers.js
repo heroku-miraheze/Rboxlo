@@ -18,7 +18,7 @@ exports.url = (path) => {
  * Gets a resource's URL from its short path, i.e. "styles.css" -> "https://rboxlo.loc/css/styles.min.css"
  * 
  * @param {string} name File name of resource
- * @param {boolean} getResourceFolder Whether to get the specific folder of the resource (default: TRUE)
+ * @param {boolean} [getResourceFolder=true] Whether to get the specific folder of the resource
  * 
  * @returns {string} Formatted path to resource
  */

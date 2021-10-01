@@ -32,7 +32,7 @@ const LONG_TERM_SESSION_EXPIRY = (86400 * 7) // One week
 /**
  * Generates a default avatar array with the classic "noob" style
  * 
- * @param {boolean} stringified Whether to return array as JSON-encoded or not (default: true)
+ * @param {boolean} [stringified=true] Whether to return array as JSON-encoded or not
  * 
  * @returns {(string|array)} Either an array or a stringified version of it, depending on what stringified is set to
  */
@@ -85,7 +85,7 @@ function generateDefaultAvatar (stringified = true) {
 /**
  * Generates the default preferences array
  * 
- * @param {boolean} stringified Whether to return array as JSON-encoded or not (default: true)
+ * @param {boolean} [stringified=true] Whether to return array as JSON-encoded or not
  * 
  * @returns {(string|array)} Either an array or a stringified version of it, depending on what stringified is set to
  */
@@ -106,7 +106,7 @@ function generateDefaultPreferences (stringified = true) {
 /**
  * Generates the default global permissions tree
  * 
- * @param {boolean} stringified Whether to return array as JSON-encoded or not (default: true)
+ * @param {boolean} [stringified=true] Whether to return array as JSON-encoded or not
  * 
  * @returns {(string|array)} Either an array or a stringified version of it, depending on what stringified is set to
  */
@@ -206,7 +206,7 @@ function generateDefaultPermissions (stringified = true) {
  * 
  * @param {string} ip User's IP address
  * @param {string} userAgent User's agent
- * @param {boolean} stringified Whether to return array as JSON-encoded or not (default: true)
+ * @param {boolean} [stringified=true] Whether to return array as JSON-encoded or not
  *
  * @returns {(string|array)} Either an array or a JSON-encoded string, depending on what stringified is set to
  */
@@ -243,7 +243,7 @@ async function appendToSignInHistory(userId, ip, userAgent) {
 /**
  * Generates a default last ping history
  * 
- * @param {boolean} stringified Whether to return array as JSON-encoded or not (default: true)
+ * @param {boolean} [stringified=true] Whether to return array as JSON-encoded or not
  * 
  * @returns {(string|array)} Either an array or a stringified version of it, depending on what stringified is set to
  */
@@ -287,7 +287,7 @@ function validateInviteKey (key) {
  * Runs query on database to find information of a given invite key
  *
  * @param {string} inviteKey The invite key
- * @param {boolean} returnAllColumns If true, returns all columns of the invite key row if it is found (default: false)
+ * @param {boolean} [returnAllColumns=false] If true, returns all columns of the invite key row if it is found
  *
  * @returns {(bool|array)} If the invite key was not found, returns FALSE. Otherwise, returns an associative array containing the columns "id", "uses", and "max_uses" of the invite key row. If returnAllColumns is set to TRUE, it will return all columns of the invite key row, including "id", "uses", and "max_uses".
  */
@@ -311,7 +311,7 @@ async function getInviteKeyInfo (inviteKey, returnAllColumns) {
  * Determines if a user needs a stipend, and if so returns the stipend amount. All resulting stipends are in absolute value
  *
  * @param {number} lastStipendTimestamp Unix timestamp of the users last stipend payment
- * @param {boolean} stackStipends Whether to stack stipends. If they haven't logged in in three days, and this is set to TRUE, it will reward the user with three days worth of stipends. If this isn't set to TRUE, and they haven't logged in in a while, it will return only reward the user with one days worth of stipend. (default: false)
+ * @param {boolean} [stackStipends=true] Whether to stack stipends. If they haven't logged in in three days, and this is set to TRUE, it will reward the user with three days worth of stipends. If this isn't set to TRUE, and they haven't logged in in a while, it will return only reward the user with one days worth of stipend.
  *
  * @returns {(number|boolean)} Returns the stipend amount if they satisfy the timeout. If they do not, returns FALSE
  */
@@ -473,7 +473,7 @@ exports.verifyLongTermSession = async (content) => {
  * @param {string} ip User's IP address
  * @param {string} userAgent User's useragent
  * @param {number} userId User ID to create a long term session of
- * @param {boolean} returnSession Whether to return the selector, validator and expiry (default: false)
+ * @param {boolean} [returnSession=false] Whether to return the selector, validator and expiry
  * 
  * @returns {(string|undefined)} Returns the session details if returnSession is true
  */
@@ -549,13 +549,13 @@ exports.updateLastPing = async (application, userId) => {
  * @param {string} information Array containing elements "username" and "password"
  * @param {string} ip User's IP address
  * @param {string} userAgent User agent
- * @param {number} antiRobot Anti robot threshold attempts, if set to something it will activate needsAuthenticationChallenge (default: false)
- * @param {boolean} rememberMe Remember user (default: false)
- * @param {boolean} setLastPing Sets the last ping for website (default: true)
- * @param {boolean} stipendWillUpdate Updates their stipend if need be (default: true)
- * @param {boolean} stackStipends Stacks stipends if updating (default: false)
- * @param {boolean} allowEmailSignIn Allows "username" field to be the E-Mail address of the user (default: false)
- * @param {boolean} signInHistoryAppend Appends to sign-in history if valid password (default: true)
+ * @param {number} [antiRobot=false] Anti robot threshold attempts, if set to something it will activate needsAuthenticationChallenge
+ * @param {boolean} [rememberMe=false] Remember user
+ * @param {boolean} [setLastPing=true] Sets the last ping for website
+ * @param {boolean} [stipendWillUpdate=true] Updates their stipend if need be
+ * @param {boolean} [stackStipends=false] Stacks stipends if updating
+ * @param {boolean} [allowEmailSignIn=false] Allows "username" field to be the E-Mail address of the user
+ * @param {boolean} [signInHistoryAppend=true] Appends to sign-in history if valid password
  * 
  * @returns {array} Returns "success" meaning valid authenticated and a array "targets" if there was an error
  */
@@ -625,7 +625,7 @@ exports.authenticate = (information, ip, userAgent, antiRobot = false, rememberM
  * @param {array} information Must contain elements "username", "password", "email", and "confirmed_password"
  * @param {string} ip User's IP address
  * @param {string} userAgent User's agent
- * @param {boolean} generateThumbnail Creates a default "noob" thumbnail for this user if the account gets created and if set to true (default: true)
+ * @param {boolean} [generateThumbnail=true] Creates a default "noob" thumbnail for this user if the account gets created and if set to true
  * 
  * @returns {array} Returns "success" meaning valid registration and a array "targets" if there was an error and field "id" user id if valid create (success)
  */

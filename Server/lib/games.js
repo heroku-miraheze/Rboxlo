@@ -61,17 +61,17 @@ function createAllowedGearsJSON(information) {
  * @param {number} gameID Parent game ID
  * @param {string} gameUUID Parent game UUID
  * @param {string} name Place name
- * @param {string} description Place description (default: "No description provided")
  * @param {number} genre Place genre (min: 1, max: 16)
  * @param {number} maxPlayers Max players (min: 1, max: 100)
- * @param {number} copying Place is copying (numeric value) (Default: FALSE (0))
  * @param {string} allowedGearsJSON Allowed gears in JSON string form
  * @param {number} chatStyle Chat style (0: classic, 1: bubble, 2: both)
  * @param {number} isStartPlace If this place is a start place
+ * @param {string} [description="No description provided"] Place description
+ * @param {number} [copying=0] Place is copylocked (numeric value)
  * 
  * @returns {array|boolean} Returns false if error (only potential error is if couldn't find game) or returns place information
  */
-exports.createPlace = async (gameID, name, description = "No description provided", genre, maxPlayers, copying = 0, allowedGearsJSON, chatStyle, isStartPlace) => {
+exports.createPlace = async (gameID, name, genre, maxPlayers, allowedGearsJSON, chatStyle, isStartPlace, description = "No description provided", copying = 0) => {
     let gameUUID = await sql.run("SELECT `uuid` FROM `games` WHERE `id` = ?", gameID)
     if (gameUUID.length == 0) {
         return false
@@ -149,7 +149,7 @@ exports.createGame = async (userID, startPlaceID, name, app, privacy) => {
  * 
  * @param {number} userID Creator user ID
  * @param {array} information Place information array 
- * @param {boolean} formChecks Whether to check all the information to see if it's valid (default: TRUE)
+ * @param {boolean} [formChecks=true] Whether to check all the information to see if it's valid
  * 
  * @returns {Promise} Returns a promise that resolves with a success boolean and "targets" assuming formChecks is true and also place/game info
  */
@@ -228,7 +228,7 @@ exports.createGameAndPlace = (userID, information, formChecks = true) => {
         }
 
         let game = await exports.createGame(userID, 0, information.name, information.application, information.privacy)
-        let place = await exports.createPlace(game.id, information.name, information.description, information.genre, information["max_players"], information.copying, createAllowedGearsJSON(information), information["chat_style"], true)
+        let place = await exports.createPlace(game.id, information.name, information.genre, information["max_players"], createAllowedGearsJSON(information), information["chat_style"], true, information.description, information.copying)
 
         response.game = game
         response.place = place
