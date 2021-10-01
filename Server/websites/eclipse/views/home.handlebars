@@ -43,7 +43,7 @@
                                 <label for="password" class="form-label">Confirm Password</label>
                                 <input id="password2" name="password2" aria-describedby="password2-info" type="password" class="form-control" required="required">
                             </div>
-                            <input type="hidden" name="_csrf" value="{{ objects.csrf }}">
+                            <input type="hidden" name="_csrf" value="{{ session.csrf }}">
                             {{#if rboxlo.captcha.enabled}}
                                 <div class="g-recaptcha" data-sitekey="{{ rboxlo.captcha.siteKey }}"></div>
                             {{/if}}
