@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `places` (
   `description` text NOT NULL,
   `genre` int(11) NOT NULL,
   `max_players` int(11) NOT NULL,
-  `copying` int(11) NOT NULL,
+  `copylocked` int(11) NOT NULL,
   `allowed_gears` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`allowed_gears`)),
   `chat_style` int(11) NOT NULL,
   `is_start_place` int(11) NOT NULL,

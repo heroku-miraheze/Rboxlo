@@ -67,11 +67,11 @@ function createAllowedGearsJSON(information) {
  * @param {number} chatStyle Chat style (0: classic, 1: bubble, 2: both)
  * @param {number} isStartPlace If this place is a start place
  * @param {string} [description="No description provided"] Place description
- * @param {number} [copying=0] Place is copylocked (numeric value)
+ * @param {number} [copylocked=0] Place is copylocked (numeric value)
  * 
  * @returns {array|boolean} Returns false if error (only potential error is if couldn't find game) or returns place information
  */
-exports.createPlace = async (gameID, name, genre, maxPlayers, allowedGearsJSON, chatStyle, isStartPlace, description = "No description provided", copying = 0) => {
+exports.createPlace = async (gameID, name, genre, maxPlayers, allowedGearsJSON, chatStyle, isStartPlace, description = "No description provided", copylocked = 0) => {
     let gameUUID = await sql.run("SELECT `uuid` FROM `games` WHERE `id` = ?", gameID)
     if (gameUUID.length == 0) {
         return false
@@ -84,8 +84,8 @@ exports.createPlace = async (gameID, name, genre, maxPlayers, allowedGearsJSON, 
     let placeUUID = uuid.v4()
 
     await sql.run(
-        "INSERT INTO `places` (`game_id`, `game_uuid`, `uuid`, `name`, `description`, `genre`, `max_players`, `copying`, `allowed_gears`, `chat_style`, `is_start_place`, `created_timestamp`, `last_updated`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-        [gameID, gameUUID, placeUUID, name, description, genre, maxPlayers, copying, allowedGearsJSON, chatStyle, isStartPlace, moment().unix(), moment().unix()]
+        "INSERT INTO `places` (`game_id`, `game_uuid`, `uuid`, `name`, `description`, `genre`, `max_players`, `copylocked`, `allowed_gears`, `chat_style`, `is_start_place`, `created_timestamp`, `last_updated`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        [gameID, gameUUID, placeUUID, name, description, genre, maxPlayers, copylocked, allowedGearsJSON, chatStyle, isStartPlace, moment().unix(), moment().unix()]
     )
 
     let place = (await sql.run("SELECT `id` FROM `places` WHERE `uuid` = ?", placeUUID))[0]
@@ -228,7 +228,7 @@ exports.createGameAndPlace = (userID, information, formChecks = true) => {
         }
 
         let game = await exports.createGame(userID, 0, information.name, information.application, information.privacy)
-        let place = await exports.createPlace(game.id, information.name, information.genre, information["max_players"], createAllowedGearsJSON(information), information["chat_style"], true, information.description, information.copying)
+        let place = await exports.createPlace(game.id, information.name, information.genre, information["max_players"], createAllowedGearsJSON(information), information["chat_style"], true, information.description, information.copylocked)
 
         response.game = game
         response.place = place
