@@ -8,4 +8,4 @@
 
 ## Reporting a Vulnerability
 
-Simply [create an issue](https://github.com/lightbulblighter/Rboxlo/issues/new) specifying the vulnerability, proof of concept, and optionally real-world scenarios where it could be abused in order to better illustrate the importance of the vulnerability.
+Simply [create an issue](https://github.com/orcfoss/Rboxlo/issues/new) specifying the vulnerability, proof of concept, and optionally real-world scenarios where it could be abused in order to better illustrate the importance of the vulnerability.

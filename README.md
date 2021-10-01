@@ -1,19 +1,19 @@
 <p align="center">
-<img src="https://github.com/lightbulblighter/Rboxlo/raw/trunk/Branding/Logos/Primary/Big.png" width="60%"><br><i>Project Eclipse 🌙</i>
+<img src="https://github.com/orcfoss/Rboxlo/raw/trunk/Branding/Logos/Primary/Big.png" width="60%"><br><i>Project Eclipse 🌙</i>
 <br><br>
-<a href="https://github.com/lightbulblighter/Rboxlo/blob/master/LICENSE">
-	<img src="https://img.shields.io/github/license/lightbulblighter/Rboxlo" alt="GitHub License">
+<a href="https://github.com/orcfoss/Rboxlo/blob/master/LICENSE">
+	<img src="https://img.shields.io/github/license/orcfoss/Rboxlo" alt="GitHub License">
 </a>
 </p>
 <hr>
 
 Rboxlo is a **free and open-source** Roblox private server that can be used to relive childhood memories and create new ones. Using Rboxlo, you can set-up your own Roblox private server in minutes with the ability to play Roblox clients dating all the way back to 2007, and as modern as 2017. Rboxlo was created to truly decentralize Roblox, and to eventually eclipse the proprietary closed source Roblox revivals that exist today.
 
-**NOTE:** Rboxlo hasn't had an official release yet, meaning that everything here is still in a "pre-release" stage. However, you can check the current status [here!](https://github.com/lightbulblighter/Rboxlo/blob/trunk/ROADMAP.md)
+**NOTE:** Rboxlo hasn't had an official release yet, meaning that everything here is still in a "pre-release" stage. However, you can check the current status [here!](https://github.com/orcfoss/Rboxlo/blob/trunk/ROADMAP.md)
 
 ## Features
 
-<img src="https://github.com/lightbulblighter/Rboxlo/raw/trunk/Branding/Artwork/SwordNoob.png" align="right" width="20%">
+<img src="https://github.com/orcfoss/Rboxlo/raw/trunk/Branding/Artwork/SwordNoob.png" align="right" width="20%">
 
 **Fully open-source and decentralized**
 
@@ -49,13 +49,13 @@ Make Rboxlo yours by customizing every single aspect of the platform. Whether it
 - **Docker** 20.10.0+
 - **Visual Studio** 2019+
 
-The requirements are very short and sweet because Docker is used to run the entire server, and Visual Studio is used to build the client applications. Detailed instructions on how to deploy Rboxlo are available in [GUIDE.MD](https://github.com/lightbulblighter/Rboxlo/blob/trunk/Setup/GUIDE.md).
+The requirements are very short and sweet because Docker is used to run the entire server, and Visual Studio is used to build the client applications. Detailed instructions on how to deploy Rboxlo are available in [GUIDE.MD](https://github.com/orcfoss/Rboxlo/blob/trunk/Setup/GUIDE.md).
 
 ## Contributing
 
 Rboxlo is public domain software licensed under the **Unlicense**.
 
-We ask that all potential contributors take a look at the [code of conduct](https://github.com/lightbulblighter/Rboxlo/blob/trunk/CONTRIBUTING.md) before contributing in order to ensure healthy discourse.
+We ask that all potential contributors take a look at the [code of conduct](https://github.com/orcfoss/Rboxlo/blob/trunk/CONTRIBUTING.md) before contributing in order to ensure healthy discourse.
 
 If you have a contribution to make, [please "unlicense" it.](http://unlicense.org/) The reason behind this requirement is because of some vague copyright laws in the United States allowing for the usage of loopholes that could potentially deteroriate Rboxlo's public domain status. **This only applies to pull requests.**
 

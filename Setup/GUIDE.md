@@ -1,7 +1,7 @@
 # Setting up Rboxlo
 The process to download and set up a Rboxlo instance is trivial. This is a small guide that details how to set up Rboxlo.
 
-If you experience any issues while setting up Rboxlo, please [file an issue](https://github.com/lightbulblighter/Rboxlo/issues/new) and attach the error message you receieved (or a full error log.) If the instructions are too confusing and need clarification, you are also welcome to file an issue containing what part you got stuck on. It is better to ask for help than move on and potentially leave your Rboxlo instance insecure, opening up holes for attackers to exploit.
+If you experience any issues while setting up Rboxlo, please [file an issue](https://github.com/orcfoss/Rboxlo/issues/new) and attach the error message you receieved (or a full error log.) If the instructions are too confusing and need clarification, you are also welcome to file an issue containing what part you got stuck on. It is better to ask for help than move on and potentially leave your Rboxlo instance insecure, opening up holes for attackers to exploit.
 
 ## Prerequisites
 This guide assumes you have the following applications installed. If you do not have them installed, you should go get them now.
@@ -12,7 +12,7 @@ This guide assumes you have the following applications installed. If you do not 
 - Docker (on Windows, you can get Docker for Desktop, but on Unix systems you can simply run this one-liner: `sudo apt-get update && sudo apt-get install docker`)
 
 ## Guide
-1. Clone this repository using Git by running this command in your terminal: `git clone https://github.com/lightbulblighter/Rboxlo`
+1. Clone this repository using Git by running this command in your terminal: `git clone https://github.com/orcfoss/Rboxlo`
 2. Navigate to the directory you have cloned the repository in.
 3. Now we are going to edit our environment. Copy the `.env.sample` file and rename the copied file to `.env`.
 4. Open your new `.env` file in your text editor.
@@ -24,11 +24,11 @@ This guide assumes you have the following applications installed. If you do not 
 We have finished building the Rboxlo Server.
 
 ## Troubleshooting
-- Rboxlo is set up with `rboxlo.loc` everywhere as its default domain. If you are not able to access `rboxlo.loc` locally, copy and paste [this](https://raw.githubusercontent.com/lightbulblighter/Rboxlo/trunk/Setup/hosts) into [your hosts file.](https://www.whatsmydns.net/hosts-file.html) **You do not need to do this if you are in a production environment (i.e. on a datacenter/server.)**
+- Rboxlo is set up with `rboxlo.loc` everywhere as its default domain. If you are not able to access `rboxlo.loc` locally, copy and paste [this](https://raw.githubusercontent.com/orcfoss/Rboxlo/trunk/Setup/hosts) into [your hosts file.](https://www.whatsmydns.net/hosts-file.html) **You do not need to do this if you are in a production environment (i.e. on a datacenter/server.)**
 - If the captcha is not working, make sure that you have input the public and site key for **Google's Checkbox reCaptcha v2.**
 - `ENCRYPTION_KEY` can be anything that is 32 characters long. `SERVER_SESSION_SECRET` and `SERVER_COOKIE_SECRET` can be anything.
 - If you are in a debugging environment, please set `PRODUCTION` in the environment file to `false`. **If you are in a production environment, make sure to set `PRODUCTION` in the environment file to `true`.**
-- If you have any other issue not listed here, please do not hesitate to file an issue on the GitHub [here](https://github.com/lightbulblighter/Rboxlo/issues/new).
+- If you have any other issue not listed here, please do not hesitate to file an issue on the GitHub [here](https://github.com/orcfoss/Rboxlo/issues/new).
 
 ## Tips
 - Some items that aren't really self-explanatory are `ENCRYPTION_KEY` and `CIPHERSWEET_KEY`. `ENCRYPTION_KEY` is the key used to encrypt user data and is really just a passphrase used as a key, so you can just enter any string and it'll work. The situation for ciphersweet is different though; you'll need a 32-byte hex encoded key for that. In simpler terms, create a passphrase (or 'password' if that term is more familiar for you) that is 32 characters long and enter it into a hex encoder like [this](https://www.convertstring.com/EncodeDecode/HexEncode). That's your new ciphersweet key.

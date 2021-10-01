@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lightbulblighter/Rboxlo.git"
+    "url": "git+https://github.com/orcfoss/Rboxlo.git"
   },
   "author": "",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/lightbulblighter/Rboxlo/issues"
+    "url": "https://github.com/orcfoss/Rboxlo/issues"
   },
-  "homepage": "https://github.com/lightbulblighter/Rboxlo#readme",
+  "homepage": "https://github.com/orcfoss/Rboxlo#readme",
   "dependencies": {
     "argon2": "^0.27.1",
     "body-parser": "^1.19.0",
