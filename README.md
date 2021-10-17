@@ -53,11 +53,9 @@ The requirements are very short and sweet because Docker is used to run the enti
 
 ## Contributing
 
-Rboxlo is public domain software licensed under the **Unlicense**.
+Rboxlo is licensed with the **MIT License**.
 
 We ask that all potential contributors take a look at the [code of conduct](https://github.com/orcfoss/Rboxlo/blob/trunk/CONTRIBUTING.md) before contributing in order to ensure healthy discourse.
-
-If you have a contribution to make, [please "unlicense" it.](http://unlicense.org/) The reason behind this requirement is because of some vague copyright laws in the United States allowing for the usage of loopholes that could potentially deteroriate Rboxlo's public domain status. **This only applies to pull requests.**
 
 If you find any problem(s) in Rboxlo, feel free to submit an issue. This includes stuff like vulnerabilities, or even the most trivial issues (such as typoes.)
 
