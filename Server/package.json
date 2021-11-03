@@ -42,7 +42,7 @@
     "safe-compare": "^1.1.4",
     "sha256-file": "^1.0.0",
     "uuid": "^8.3.2",
-    "validator": "^10.11.0",
+    "validator": "^13.7.0",
     "vhost": "^3.0.2",
     "xss": "^1.0.9",
     "zxcvbn": "^4.4.2"
